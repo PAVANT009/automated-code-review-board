@@ -1,0 +1,11 @@
+diff --git a/src/users.py b/src/users.py
+index 1234567..7654321 100644
+--- a/src/users.py
++++ b/src/users.py
+@@ -1,2 +1,8 @@
++import sqlite3
++API_KEY = "sk_live_demonstration_secret"
++
++def find_user(user_id):
++    query = f"SELECT * FROM users WHERE id = {user_id}"
++    return sqlite3.connect("app.db").execute(query).fetchone()
